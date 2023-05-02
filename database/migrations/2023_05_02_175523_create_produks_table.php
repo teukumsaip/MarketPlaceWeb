@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tokos', function (Blueprint $table) {
+        Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->integer('idUser');
-            $table->string('nama_toko');
-            $table->string('nama_pemilik');
+            $table->string('nama');
+            $table->integer('harga');
             $table->string('alamat');
-            $table->string('kecamatan');
-            $table->string('kota');
-            $table->integer('kode_post');
+            $table->string('deskripsi');
+            $table->integer('id_kategori')->unique();
+            $table->integer('id_merk')->unique();
+            $table->string('kondisi');
+            $table->integer('berat');
+            $table->integer('stok');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tokos');
+        Schema::dropIfExists('produks');
     }
 };
