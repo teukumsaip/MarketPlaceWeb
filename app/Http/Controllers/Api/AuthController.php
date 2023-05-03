@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Pengguna;
 
 class AuthController extends Controller
 {
@@ -13,12 +13,10 @@ class AuthController extends Controller
         if(!$request->email){
             return 'Email tidak boleh kosong';
         }
-        $user = User::where('email', $request->email)->first();
-        if($user){
-            return "selamat datang ".$user->name;
+        $pengguna = Pengguna::where('email', $request->email)->first();
+        if($pengguna){
+            return "selamat datang ".$pengguna->nama;
         }
         return "User tidak ditemukan";
     }
-
-
 }
