@@ -21,10 +21,7 @@ class Pengguna extends Authenticatable
         'id',
         'nama',
         'email',
-        'alamat',
         'no_telp',
-        'tanggal_lahir',
-        'jenis_kelamin',
         'password',
     ];
 
