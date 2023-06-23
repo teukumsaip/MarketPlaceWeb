@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pengiriman extends Model
-{
+class UserRole extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'idTransaksi',
-        'alamat_pengiriman',
-        'tanggal_pengiriman',
-        'tanggal_penerimaan',
+        'userId',
+        'isAdmin'
+    ];
+
+    protected $casts = [
+        'isAdmin' => 'boolean'
     ];
 }

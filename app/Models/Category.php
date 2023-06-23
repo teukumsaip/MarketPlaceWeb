@@ -5,15 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Alamat extends Model
-{
+class Category extends Model {
     use HasFactory;
 
     protected $fillable = [
+        'parentId',
         'name',
-        'idUser',
-        'alamat',
-        'kota',
-        'kecamatan'
+        'description',
+        'image',
+        'isActive',
     ];
+
+    protected $casts = [
+        'isActive' => 'boolean'
+    ];
+
 }

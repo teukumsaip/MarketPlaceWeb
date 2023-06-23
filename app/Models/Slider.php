@@ -5,13 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
-{
+class Slider extends Model {
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'nama',
-        'deskripsi',
+        'name',
+        'description',
+        'image',
+        'isActive',
+    ];
+
+    protected $casts = [
+        'isActive' => 'boolean'
     ];
 }

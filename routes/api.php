@@ -16,8 +16,12 @@ use App\Http\Controllers\Api\AuthController;
 */
 
 Route::middleware('auth:sanctum')->get('/pengguna', function (Request $request) {
-    return $request->pengguna();
+    return $request->user();
 });
 
 route::post('login', [AuthController::class,'login']);
 route::post('register', [AuthController::class,'register']);
+Route::put('update-user/{id}', [AuthController::class, 'update']);
+Route::post('upload-user/{id}', [AuthController::class, 'upload']);
+Route::resource('toko', \App\Http\Controllers\Api\TokoController::class);
+
